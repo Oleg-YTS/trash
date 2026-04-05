@@ -9,9 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем код
 COPY . .
 
-# Render требует PORT переменную для web-сервисов
-# Бот использует polling, но healthcheck нужен
+# Render устанавливает PORT, мы биндимся на него
 EXPOSE 10000
 
-# Запуск: бот + простой healthcheck сервер
-CMD ["sh", "-c", "python healthcheck.py & python fridge_bot.py"]
+CMD ["python", "start.py"]
