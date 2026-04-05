@@ -41,8 +41,12 @@ def main():
     print("[start] Starting fridge_bot...", flush=True)
     sys.stdout.flush()
 
-    # Импортируем и запускаем бота
-    import fridge_bot
+    # Загружаем конфиг и запускаем polling явно
+    from fridge_bot import bot
+
+    print("[start] Bot polling started", flush=True)
+    sys.stdout.flush()
+    bot.infinity_polling(timeout=30, long_polling_timeout=30)
 
 
 if __name__ == "__main__":
