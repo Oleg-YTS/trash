@@ -8,5 +8,7 @@ services:
         sync: false
       - key: GROQ_API_KEY
         sync: false
+      - key: WEBHOOK_URL
+        value: https://trash-diet.onrender.com/webhook
     healthCheckPath: /
     autoDeploy: true
