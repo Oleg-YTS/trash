@@ -12,4 +12,6 @@ COPY . .
 # Render устанавливает PORT, мы биндимся на него
 EXPOSE 10000
 
-CMD ["python", "start.py"]
+# Render запускает через gunicorn
+# Для локальной разработки используйте: docker run -e USE_POLLING=true ...
+CMD gunicorn --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120 start:app

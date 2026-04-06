@@ -632,8 +632,5 @@ def handle_successful_payment(message):
 
 
 if __name__ == "__main__":
-    print("🍔 Трэш-диетолог запущен!")
-    print(f"🧠 Модель: Groq {GROQ_MODEL}")
-    print(f"📊 Бесплатных анализов/день: {MAX_ANALYSES_PER_DAY}")
-    print("🤖 Жду фото холодильников...")
-    bot.infinity_polling(timeout=30, long_polling_timeout=30)
+    print("⚠️  Запуск через start.py, а не напрямую!")
+    print("Используй: python start.py")
